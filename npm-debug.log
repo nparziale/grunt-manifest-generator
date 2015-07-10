@@ -1,0 +1,76 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@1.4.14
+3 info using node@v0.10.29
+4 verbose publish [ '.' ]
+5 verbose cache add [ '.', null ]
+6 verbose cache add name=undefined spec="." args=[".",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: '.',
+7 verbose parsed url   path: '.',
+7 verbose parsed url   href: '.' }
+8 silly lockFile 3a52ce78- .
+9 verbose lock . /Users/nparziale/.npm/3a52ce78-.lock
+10 verbose tar pack [ '/Users/nparziale/.npm/grunt-manifest-generator/0.1.3/package.tgz',
+10 verbose tar pack   '.' ]
+11 verbose tarball /Users/nparziale/.npm/grunt-manifest-generator/0.1.3/package.tgz
+12 verbose folder .
+13 info prepublish grunt-manifest-generator@0.1.3
+14 silly lockFile 1f1177db-tar tar://.
+15 verbose lock tar://. /Users/nparziale/.npm/1f1177db-tar.lock
+16 silly lockFile 2e513053-fest-generator-0-1-3-package-tgz tar:///Users/nparziale/.npm/grunt-manifest-generator/0.1.3/package.tgz
+17 verbose lock tar:///Users/nparziale/.npm/grunt-manifest-generator/0.1.3/package.tgz /Users/nparziale/.npm/2e513053-fest-generator-0-1-3-package-tgz.lock
+18 silly lockFile 1f1177db-tar tar://.
+19 silly lockFile 1f1177db-tar tar://.
+20 silly lockFile 2e513053-fest-generator-0-1-3-package-tgz tar:///Users/nparziale/.npm/grunt-manifest-generator/0.1.3/package.tgz
+21 silly lockFile 2e513053-fest-generator-0-1-3-package-tgz tar:///Users/nparziale/.npm/grunt-manifest-generator/0.1.3/package.tgz
+22 silly lockFile fd0fd617-manifest-generator-0-1-3-package /Users/nparziale/.npm/grunt-manifest-generator/0.1.3/package
+23 verbose lock /Users/nparziale/.npm/grunt-manifest-generator/0.1.3/package /Users/nparziale/.npm/fd0fd617-manifest-generator-0-1-3-package.lock
+24 silly lockFile fd0fd617-manifest-generator-0-1-3-package /Users/nparziale/.npm/grunt-manifest-generator/0.1.3/package
+25 silly lockFile fd0fd617-manifest-generator-0-1-3-package /Users/nparziale/.npm/grunt-manifest-generator/0.1.3/package
+26 silly lockFile 3a52ce78- .
+27 silly lockFile 3a52ce78- .
+28 silly publish { name: 'grunt-manifest-generator',
+28 silly publish   description: 'this tool will scan all the html files, and get all the images, css, js, html to generator the manifest file.',
+28 silly publish   version: '0.1.3',
+28 silly publish   homepage: 'https://github.com/ginano/grunt-manifest-generator',
+28 silly publish   author:
+28 silly publish    { name: 'ginano',
+28 silly publish      email: 'www@ginano.net',
+28 silly publish      url: 'http://www.ginano.net' },
+28 silly publish   repository:
+28 silly publish    { type: 'git',
+28 silly publish      url: 'git://github.com/ginano/grunt-manifest-generator.git' },
+28 silly publish   bugs: { url: 'https://github.com/ginano/grunt-manifest-generator/issues' },
+28 silly publish   licenses:
+28 silly publish    [ { type: 'MIT',
+28 silly publish        url: 'https://github.com/ginano/grunt-manifest-generator/blob/master/LICENSE-MIT' } ],
+28 silly publish   main: 'Gruntfile.js',
+28 silly publish   engines: { node: '>= 0.8.0' },
+28 silly publish   scripts: { test: 'grunt test' },
+28 silly publish   dependencies: {},
+28 silly publish   peerDependencies: { grunt: '~0.4.1' },
+28 silly publish   keywords: [ 'gruntplugin', 'manifest', 'generator', 'combo' ],
+28 silly publish   readme: 'grunt-manifest-generator\n========================\n\n>this tool will scan all the html files, and get all the images, css, js, html to generator the manifest file.\n\n## Getting Started\nThis plugin requires Grunt `~0.4.1`\n\nIf you haven\'t used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you\'re familiar with that process, you may install this plugin with this command:\n\n```shell\nnpm install grunt-manifest-generator\n```\n\nOnce the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:\n\n```js\ngrunt.loadNpmTasks(\'grunt-manifest-generator\');\n```\n\nYou can run the testcase. change you path to ./node_modeules/grunt-manifest-generator/, and run grunt. You could see the result file ./output/test.manifest file was created! The ./Gruntfile.js has the base function of this task, so you could use it as that. If you have any question, you can contact me at sina weibo: http://weibo.com/ginano\n## The "manifest-generator" task\n\n### Overview\nIn your project\'s Gruntfile, add a section named `manifestGenerator` to the data object passed into `grunt.initConfig()`.\n\n```js\n\'use strict\';\n\nmodule.exports = function(grunt) {\n  grunt.initConfig({\n    // Configuration to be run (and then tested).\n    manifestGenerator:{\n      test: {\n        options:{\n          //is cache all the html files in source files\n          //{Boolean}\n          //default:true\n          includeHTML:true,\n          //is cache all the images tags or inline style with background-images in the  html files in source files\n          //{Boolean}\n          //default:true\n          includeHtmlImage:true,\n          //is cache all the style files imported by the html\n          //{Boolean}\n          //default:true\n          includeCSS:true,\n          //is cache all the background-images in the css contents, which were used by the  html files\n          //{Boolean}\n          //default:true\n          includeCssImage:true,\n          //is cache all the js files in the html files\n          //{Boolean}\n          //default:true\n          includeJS:true,\n          //all the files above but the fllowwing files.\n          //{Array} the item could be writen as regexpress.\n          //default:[]\n          excludeFiles:[\'/\\.png$/\']\n        },\n        files: {\n          //the task will scan all the source files, and generate \'test.manifest\' file as the cache setting. \n          \'test.manifest\': [\'test/test.html\',\'test/index.html\']\n        }\n      }\n    }\n  });\n  // Actually load this plugin\'s task(s).\n  grunt.loadNpmTasks(\'grunt-manifest-generator\');\n  grunt.registerTask(\'grunt\', [\'manifestGenerator:test\']);\n};\n```\n\n\n## Contributing\nIn lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).\n\n## Release History\n2013-8-23 0.1.0 create the plugin\n\n2013-10-12 0.1.1 add the extraFiles option for add some extra files to the manifest file. optimize the rule of geting image files from htmlcontent.\n\n2013-11-25 0.1.2-0.1.3 add some comments for the sourecode. change the usage of lib/util.',
+28 silly publish   readmeFilename: 'README.md',
+28 silly publish   gitHead: 'e3d1569897dc79a2085a15e548de357edd7c84c7',
+28 silly publish   _id: 'grunt-manifest-generator@0.1.3',
+28 silly publish   _shasum: 'fb1302bfac7115c091f290005b9c45bd4aafa433',
+28 silly publish   _from: '.' }
+29 error need auth auth and email required for publishing
+29 error need auth You need to authorize this machine using `npm adduser`
+30 error System Darwin 14.1.0
+31 error command "node" "/usr/local/bin/npm" "publish"
+32 error cwd /Users/nparziale/grunt-manifest-generator
+33 error node -v v0.10.29
+34 error npm -v 1.4.14
+35 error code ENEEDAUTH
+36 verbose exit [ 1, true ]
